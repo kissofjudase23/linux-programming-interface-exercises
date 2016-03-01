@@ -26,15 +26,30 @@ IMPL_CFLAGS = -std=c99 -D_XOPEN_SOURCE=600 \
 		-pedantic \
 		-Wall \
 		-W \
-    -Wpointer-arith \
+		-Wpointer-arith \
 		-Wmissing-prototypes \
 		-Wno-sign-compare \
 		-Wno-unused-parameter \
-    -Wno-format-y2k \
-    -Wno-long-long \
-		-lrt       #for time.h
+		-Wno-format-y2k \
+		-Wno-long-long \
+		-lrt # for <time.h>
 
 CFLAGS = ${IMPL_CFLAGS}
+
+IMPL_CXXFLAGS = -D_XOPEN_SOURCE=600 \
+		-D_DEFAULT_SOURCE \
+		-g -I${TLPI_INCL_DIR} \
+		-pedantic \
+		-Wall \
+		-W \
+		-Wpointer-arith \
+		-Wno-sign-compare \
+		-Wno-unused-parameter \
+		-Wno-format-y2k \
+		-Wno-long-long \
+		-lrt # for 
+
+CXXFLAGS=IMPL_CXXFLAGS
 
 IMPL_THREAD_FLAGS = -pthread
 
